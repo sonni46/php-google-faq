@@ -65,6 +65,36 @@ $dataFaq =
         ],
 ];
 
+$menus = 
+[
+    [ 
+        "Titol" => "Introduzione"
+
+    ],
+    [ 
+        "Titol" => "Norme sulla privacy"
+
+    ],
+
+    [ 
+        "Titol" => "Termini di servizio"
+
+    ],
+
+    [ 
+        "Titol" => "Tecnologie"
+
+    ],
+
+    [ 
+        "Titol" => "Domande frequenti",
+        "Active" => "active"
+
+    ],
+
+
+];
+
  ?>
 
 <!DOCTYPE html>
@@ -74,12 +104,27 @@ $dataFaq =
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
     <div class="container-fluid">
-        <div>
+        <div class="menu sticky">
+            <ul>
+                <?php 
+                foreach ($menus as $menu) {
+                    if($menu["Active"] === "active") {
+                        echo "<li>" . "<a href=''  class='active'>" . $menu["Titol"] . "</a>" . "</li>";
+                    }
+                    else {
+                        echo "<li>" . "<a href=''>" . $menu["Titol"] . "</a>" . "</li>";
+                    }
+                }
+                ?>
 
+            </ul>
         </div>
         <div class="container">
             <?php 
